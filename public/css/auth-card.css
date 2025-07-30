@@ -1,0 +1,722 @@
+/* ============================================
+   AUTH CARD ELEGANTE - ESTILO FRESHA INSPIRADO
+   ============================================ */
+
+:root {
+  /* 🎨 Paleta suave y elegante */
+  --bg-base: #f5f7ff;
+  --bg-gradient: linear-gradient(135deg, #f5f7ff 0%, #f0f4ff 25%, #e8f0ff 50%, #e0ebff 75%, #d8e6ff 100%);
+  --accent-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+  --secondary-gradient: linear-gradient(135deg, #ec4899 0%, #a855f7 50%, #6366f1 100%);
+  
+  /* 🌈 Colores base */
+  --neutral-white: #ffffff;
+  --neutral-gray: #64748b;
+  --neutral-dark: #1e293b;
+  
+  /* ✨ Efectos glass y overlays */
+  --glass-overlay: rgba(30, 41, 59, 0.15);
+  --glass-border: rgba(255, 255, 255, 0.25);
+  --backdrop-blur: 24px;
+
+  /* 📏 Espaciado */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 0.75rem;
+  --space-lg: 1rem;
+  --space-xl: 1.25rem;
+
+  /* 📝 Tipografía */
+  --font-xs: 0.75rem;
+  --font-sm: 0.875rem;
+  --font-base: 0.95rem;
+  --font-lg: 1.1rem;
+  --font-xl: 1.25rem;
+
+  /* 🔄 Bordes y efectos */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+
+  /* 🎭 Sombras suaves */
+  --shadow-soft: 0 2px 8px rgba(99, 102, 241, 0.06);
+  --shadow-medium: 0 8px 25px rgba(99, 102, 241, 0.08);
+  --shadow-strong: 0 20px 40px rgba(99, 102, 241, 0.12);
+  
+  /* ⚡ Transiciones */
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-gradient);
+  background-size: 200% 200%;
+  animation: subtleGradientShift 20s ease infinite;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+  line-height: 1.5;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 🫧 BOLITAS ADICIONALES con box-shadow - TÉCNICA ALTERNATIVA */
+body::after {
+  content: '';
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  top: 20%;
+  left: 15%;
+  border-radius: 50%;
+  background: rgba(255, 215, 0, 0.6);
+  box-shadow: 
+    200px 100px 0 -5px rgba(236, 72, 153, 0.5),
+    -150px 300px 0 0px rgba(255, 140, 0, 0.4),
+    400px 50px 0 10px rgba(168, 85, 247, 0.6),
+    600px 250px 0 -8px rgba(99, 102, 241, 0.5),
+    -100px 500px 0 5px rgba(34, 197, 94, 0.4),
+    800px 400px 0 -3px rgba(248, 113, 113, 0.5),
+    100px 600px 0 8px rgba(139, 92, 246, 0.6),
+    500px 150px 0 -10px rgba(255, 215, 0, 0.4);
+  animation: floatingBubbles 25s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 🌊 Animación sutil del fondo */
+@keyframes subtleGradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* 🫧 Animación de las bolitas flotantes */
+@keyframes floatingBubbles {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+    opacity: 1;
+  }
+  25% {
+    transform: translate(-15px, -25px) scale(1.1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(20px, -15px) scale(0.9);
+    opacity: 0.6;
+  }
+  75% {
+    transform: translate(-10px, -30px) scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+/* 🫧 BOLITAS SÚPER VISIBLES - NUEVAS */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle 150px at 10% 20%, rgba(255, 215, 0, 0.4) 0%, rgba(255, 215, 0, 0.1) 30%, transparent 60%),
+    radial-gradient(circle 120px at 90% 15%, rgba(236, 72, 153, 0.35) 0%, rgba(236, 72, 153, 0.08) 35%, transparent 65%),
+    radial-gradient(circle 180px at 15% 85%, rgba(255, 140, 0, 0.38) 0%, rgba(255, 140, 0, 0.06) 40%, transparent 70%),
+    radial-gradient(circle 140px at 85% 80%, rgba(168, 85, 247, 0.42) 0%, rgba(168, 85, 247, 0.09) 35%, transparent 65%);
+  animation: floatingBubbles 15s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 🌈 MÁS BOLITAS SÚPER VISIBLES */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle 110px at 70% 25%, rgba(99, 102, 241, 0.3) 0%, rgba(99, 102, 241, 0.08) 40%, transparent 70%),
+    radial-gradient(circle 160px at 25% 50%, rgba(34, 197, 94, 0.25) 0%, rgba(34, 197, 94, 0.05) 45%, transparent 75%),
+    radial-gradient(circle 100px at 80% 60%, rgba(248, 113, 113, 0.32) 0%, rgba(248, 113, 113, 0.07) 40%, transparent 70%),
+    radial-gradient(circle 130px at 30% 15%, rgba(139, 92, 246, 0.28) 0%, rgba(139, 92, 246, 0.06) 45%, transparent 75%);
+  animation: floatingBubbles 20s ease-in-out infinite reverse;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes floatingBubbles {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+    opacity: 1;
+  }
+  25% {
+    transform: translate(-15px, -25px) scale(1.1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(20px, -15px) scale(0.9);
+    opacity: 0.6;
+  }
+  75% {
+    transform: translate(-10px, -30px) scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+.auth-main-container {
+  width: 100%;
+  max-width: 420px;
+  background: var(--glass-overlay);
+  backdrop-filter: blur(var(--backdrop-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-strong);
+  overflow: hidden;
+  max-height: 95vh;
+  overflow-y: auto;
+  position: relative;
+  z-index: 10;
+  transition: var(--transition);
+}
+
+/* 🎭 Efecto hover sutil */
+.auth-main-container:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 25px 50px rgba(99, 102, 241, 0.15);
+}
+
+.auth-card-content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+.auth-header {
+  text-align: center;
+  padding: var(--space-xl) var(--space-lg) var(--space-md);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+/* 🌟 Logo elegante */
+.auth-logo {
+  width: 3rem;
+  height: 3rem;
+  background: var(--accent-gradient);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-sm);
+  color: white;
+  font-size: 1.2rem;
+  box-shadow: var(--shadow-medium);
+  position: relative;
+  transition: var(--transition);
+}
+
+.auth-logo:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 30px rgba(99, 102, 241, 0.2);
+}
+
+.auth-title {
+  font-size: var(--font-xl);
+  font-weight: 700;
+  color: white;
+  margin-bottom: var(--space-xs);
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 8px rgba(30, 41, 59, 0.3);
+}
+
+.auth-subtitle {
+  font-size: var(--font-sm);
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+.auth-form-wrapper {
+  padding: var(--space-lg);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.auth-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.auth-label {
+  font-size: var(--font-sm);
+  font-weight: 600;
+  color: white;
+  text-shadow: 0 1px 2px rgba(30, 41, 59, 0.3);
+}
+
+.auth-input-container {
+  position: relative;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: var(--transition);
+  backdrop-filter: blur(10px);
+}
+
+.auth-input-container:focus-within {
+  border-color: rgba(99, 102, 241, 0.6);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.auth-input {
+  width: 100%;
+  padding: 0.75rem 0.75rem 0.75rem 2.5rem;
+  border: none;
+  background: transparent;
+  font-size: var(--font-base);
+  color: var(--neutral-dark);
+  transition: var(--transition);
+  font-weight: 500;
+}
+
+.auth-input:focus {
+  outline: none;
+}
+
+.auth-input::placeholder {
+  color: var(--neutral-gray);
+  font-size: var(--font-sm);
+  font-weight: 400;
+}
+
+.auth-input-icon {
+  position: absolute;
+  top: 50%;
+  left: 0.85rem;
+  transform: translateY(-50%);
+  color: var(--neutral-gray);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.auth-input-container:focus-within .auth-input-icon {
+  color: #6366f1;
+  transform: translateY(-50%) scale(1.05);
+}
+
+/* 🚀 Botón principal */
+.auth-btn-primary {
+  background: var(--accent-gradient);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: var(--radius-md);
+  font-size: var(--font-base);
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-medium);
+}
+
+.auth-btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px rgba(99, 102, 241, 0.25);
+}
+
+.auth-btn-primary:active {
+  transform: translateY(0);
+}
+
+.auth-options-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin: -0.25rem 0;
+}
+
+.auth-checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.auth-checkbox {
+  width: 1.1rem;
+  height: 1.1rem;
+  accent-color: #6366f1;
+  border-radius: var(--radius-sm);
+}
+
+.auth-checkbox-label,
+.auth-forgot-link {
+  font-size: var(--font-xs);
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.auth-forgot-link {
+  color: rgba(255, 255, 255, 0.95);
+  transition: var(--transition);
+}
+
+.auth-forgot-link:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.auth-google-section {
+  margin-top: var(--space-md);
+}
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin: var(--space-md) 0;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+}
+
+.auth-divider span {
+  font-size: var(--font-xs);
+  color: rgba(255, 255, 255, 0.8);
+  padding: 0 var(--space-sm);
+  font-weight: 500;
+}
+
+/* 🔧 Botón de Google CORREGIDO */
+.auth-btn-google {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: var(--radius-md);
+  padding: 0.65rem 1.2rem;
+  font-size: var(--font-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: var(--neutral-dark);
+  font-weight: 600;
+  transition: var(--transition-slow);
+  width: 100%;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-soft);
+  /* 🚫 Sin transformaciones que causen expansión */
+  transform: none !important;
+}
+
+.auth-btn-google:hover {
+  background: rgba(255, 255, 255, 0.98);
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.1);
+  /* 🚫 SIN efectos que expandan */
+  transform: none !important;
+}
+
+.auth-btn-google:active {
+  transform: none !important;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.auth-google-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* 🎉 Alertas elegantes */
+.auth-success-alert {
+  background: rgba(34, 197, 94, 0.15);
+  color: #065f46;
+  padding: var(--space-md);
+  border-left: 3px solid #10b981;
+  border-radius: var(--radius-md);
+  font-size: var(--font-sm);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: var(--space-lg);
+  backdrop-filter: blur(10px);
+  font-weight: 500;
+}
+
+.auth-error-msg {
+  color: #dc2626;
+  font-size: var(--font-xs);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: var(--space-xs);
+  font-weight: 500;
+}
+
+.auth-link {
+  color: rgba(255, 255, 255, 0.95);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.auth-link:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+/* 🎯 Links específicos para términos y condiciones - SIN BOTÓN */
+.auth-checkbox-label .auth-link {
+  display: inline !important;
+  background: none !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  font-weight: 500 !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.auth-checkbox-label .auth-link:hover {
+  background: none !important;
+  transform: none !important;
+  box-shadow: none !important;
+  text-decoration: underline !important;
+  color: white !important;
+}
+
+/* 🎯 Link "¿Olvidaste tu contraseña?" - SIN BOTÓN */
+.auth-forgot-link {
+  color: rgba(255, 255, 255, 0.95) !important;
+  transition: var(--transition);
+  background: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.auth-forgot-link:hover {
+  color: white !important;
+  text-decoration: underline !important;
+  background: none !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.footer-text {
+  font-size: var(--font-sm);
+  text-align: center;
+  margin-top: var(--space-lg);
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+/* 🎯 BOTÓN REGÍSTRATE - APPROACH COMPLETAMENTE NUEVO */
+.footer-text a[href*="register"] {
+  display: inline-block !important;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%) !important;
+  color: white !important;
+  padding: 0.6rem 1.4rem !important;
+  border-radius: 8px !important;
+  margin-left: 0.5rem !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2) !important;
+  font-size: 0.875rem !important;
+}
+
+.footer-text a[href*="register"]:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4) !important;
+  text-decoration: none !important;
+  color: white !important;
+  background: linear-gradient(135deg, #5b61f0 0%, #8048f5 50%, #9d46f6 100%) !important;
+}
+
+.footer-text a[href*="register"]:active {
+  transform: translateY(0) !important;
+}
+
+.auth-bottom-link {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.auth-bottom-link a {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    color: white;
+    padding: 0.5rem 1.25rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s ease;
+}
+
+.auth-bottom-link a:hover {
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+}
+
+/* 📱 Responsive */
+@media (max-width: 480px) {
+  body {
+    padding: var(--space-sm);
+  }
+  
+  .auth-main-container {
+    max-width: 100%;
+    max-height: 100vh;
+    border-radius: var(--radius-lg);
+  }
+
+  .auth-form-wrapper {
+    padding: var(--space-md);
+  }
+  
+  .auth-header {
+    padding: var(--space-lg) var(--space-md) var(--space-sm);
+  }
+
+  .auth-logo {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.1rem;
+  }
+
+  .auth-title {
+    font-size: var(--font-lg);
+  }
+
+  .auth-input {
+    padding: 0.7rem 0.7rem 0.7rem 2.3rem;
+  }
+
+  .auth-input-icon {
+    left: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .auth-options-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-md);
+  }
+
+  .auth-checkbox-group {
+    justify-content: center;
+  }
+
+  .auth-forgot-link {
+    text-align: center;
+    display: block;
+  }
+}
+
+@media (max-height: 700px) {
+  .auth-header {
+    padding: var(--space-md) var(--space-lg) var(--space-sm);
+  }
+  
+  .auth-form {
+    gap: var(--space-md);
+  }
+  
+  .auth-google-section {
+    margin-top: var(--space-sm);
+  }
+}
+
+/* ✨ Scroll personalizado */
+.auth-main-container {
+  scroll-behavior: smooth;
+}
+
+.auth-main-container::-webkit-scrollbar {
+  width: 4px;
+}
+
+.auth-main-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+}
+
+.auth-main-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #6366f1, #8b5cf6);
+  border-radius: 2px;
+}
+
+/* 🎭 Focus visible */
+[data-focus-visible] {
+  outline: 2px solid rgba(99, 102, 241, 0.6) !important;
+  outline-offset: 2px;
+}
+
+/* 🌟 Efectos de ripple */
+.auth-ripple-effect {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(0);
+  animation: ripple 0.8s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* ⚡ Modo de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  body::before,
+  body::after {
+    animation: none;
+  }
+}
